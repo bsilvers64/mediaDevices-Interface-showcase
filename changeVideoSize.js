@@ -1,6 +1,6 @@
 const supportedConstraints = navigator.mediaDevices.getSupportedConstraints();
 
-console.log(supportedConstraints);
+//console.log(supportedConstraints);
 
 const changeVideoSize = () => { 
 
@@ -40,6 +40,3 @@ const changeVideoSize = () => {
     }); */
 }
 
-document.querySelector("#change-size").addEventListener("click", (e) => {
-  changeVideoSize(e);
-});

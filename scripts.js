@@ -33,16 +33,16 @@ const showMyFeed = (e) => {
     return;
   }
   console.log("show my feed is working");
-      changeButtons([
-        "green",
-        "green",
-        "blue",
-        "blue",
-        "blue",
-        "grey",
-        "grey",
-        "blue",
-      ]);
+  changeButtons([
+    "green",
+    "green",
+    "blue",
+    "blue",
+    "blue",
+    "grey",
+    "grey",
+    "blue",
+  ]);
   //console.log(stream.getTracks());
   // this will set MediaStream object to our video />
   videoEl.srcObject = stream;
@@ -53,16 +53,16 @@ const stopMyFeed = (e) => {
     alert("Stream is still loading...");
     return;
   }
-      changeButtons([
-        "blue",
-        "grey",
-        "grey",
-        "grey",
-        "grey",
-        "grey",
-        "grey",
-        "grey",
-      ]); 
+  changeButtons([
+    "blue",
+    "grey",
+    "grey",
+    "grey",
+    "grey",
+    "grey",
+    "grey",
+    "grey",
+  ]);
   //videoEl.srcObject = null;
 
   // we can also dissasociate the tracks with the source -
@@ -89,4 +89,24 @@ document.querySelector("#show-video").addEventListener("click", (e) => {
 
 document.querySelector("#stop-video").addEventListener("click", (e) => {
   stopMyFeed(e);
+});
+
+document.querySelector("#change-size").addEventListener("click", (e) => {
+  changeVideoSize(e);
+});
+
+document.querySelector("#start-record").addEventListener("click", (e) => {
+  startRecording(e);
+});
+
+document.querySelector("#stop-record").addEventListener("click", (e) => {
+  stopRecording(e);
+});
+
+document.querySelector("#play-record").addEventListener("click", (e) => {
+  playRecording(e);
+});
+
+document.querySelector("#share-screen").addEventListener("click", (e) => {
+  shareScreen(e);
 });
