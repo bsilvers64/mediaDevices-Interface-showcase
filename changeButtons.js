@@ -20,7 +20,6 @@ const buttonEls = buttonsById.map((buttonId) =>
 );
 
 const changeButtons = (colorsArray) => {
-    console.log("hey");
   colorsArray.forEach((color, i) => {
     buttonEls[i].classList.remove("btn-success");
     buttonEls[i].classList.remove("btn-primary");
