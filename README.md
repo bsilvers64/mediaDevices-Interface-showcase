@@ -18,6 +18,9 @@ The **MediaStream** interface of the **Media Capture and Streams API** represent
 
 We can access these tracks with the `getTracks()` method on the `mediaStream` object, for example. This contains 2 tracks, one for audio, and the other for video.
 
+![Screenshot 2023-12-20 170354](https://github.com/bsilvers64/mediaDevices-Interface-showcase/assets/48654366/716553ef-8cd0-4d31-a5db-049751ac1f8b)
+
+
 The **MediaDevices.getUserMedia()** method prompts the user for permission to use a media input, producing a `MediaStream` with tracks containing the requested types of media. It returns a Promise that resolves to a `MediaStream` object. If the user denies permission or matching media is not available, the promise is rejected with `NotAllowedError` or `NotFoundError` DOMException, respectively.
 
 More here: [MediaDevices - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices)
@@ -25,6 +28,9 @@ More here: [MediaDevices - MDN Web Docs](https://developer.mozilla.org/en-US/doc
 We have a function, `changeButtons()`, which changes the colors of the buttons.
 
 We can change the video resolution on the front-end through much parsing and processing, but that can easily be done via making changes in the API. We have used constraints for the type of media to request in `getUserMedia`. So we will add our additional requirements in those constraints, like the resolution. And we can ask the individual tracks (our audio or video) what constraints are available. For example, here we get 2 objects listing supported constraints. The first is for the audio track, and the second is for the video track.
+
+![Screenshot 2023-12-20 213851](https://github.com/bsilvers64/mediaDevices-Interface-showcase/assets/48654366/61171a2b-864c-4d42-81fa-341912cf6d9b)
+
 
 **MediaTrackConstraints** - a dictionary is used to describe a set of capabilities and the value or values each can take on. A constraints dictionary is passed into `applyConstraints()` to allow a script to establish a set of exact (required) values or ranges and/or preferred values or ranges of values for the track, and the most recently-requested set of custom constraints can be retrieved by calling `getConstraints()`. And, the **MediaTrackSupportedConstraints** dictionary establishes the list of constrainable properties recognized by the user agent or browser in its implementation of the `MediaStreamTrack` object.
 
