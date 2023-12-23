@@ -1,5 +1,7 @@
 const videoEl = document.querySelector("#my-video");
 let stream = null;
+let mediaStream = null;
+// init mediaStream var for our screen-share feature
 
 const constraints = {
   audio: true,
@@ -9,6 +11,7 @@ const constraints = {
 const getMicandCamera = async (e) => {
   try {
     stream = await navigator.mediaDevices.getUserMedia(constraints);
+    getDevices();
     /* use the stream */
     changeButtons([
       "green",
@@ -109,4 +112,16 @@ document.querySelector("#play-record").addEventListener("click", (e) => {
 
 document.querySelector("#share-screen").addEventListener("click", (e) => {
   shareScreen(e);
+});
+
+document.querySelector("#audio-input").addEventListener("change", (e) => {
+  changeAudioInput(e);
+});
+
+document.querySelector("#video-input").addEventListener("change", (e) => {  
+  changeVideoInput(e);
+});
+
+document.querySelector("#audio-output").addEventListener("change", (e) => {
+  changeAudioOutput(e);
 });

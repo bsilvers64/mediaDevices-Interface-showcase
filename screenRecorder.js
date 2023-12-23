@@ -2,16 +2,18 @@ let mediaRecorder;
 let recordedBlobs;
 
 const startRecording = () => {
-
-    if (!stream) {
-        alert("No current feed");
-        return
-    }
+  // we can use mediaStream here to record the screenshare
+  if (!stream) {
+    alert("No current feed");
+    return;
+  }
 
   console.log("start recording");
 
+  // we can use mediaStream here to record the screenshare
   mediaRecorder = new MediaRecorder(stream);
   console.log(mediaRecorder);
+  
   recordedBlobs = []; // an array to hold the blobs for playback
   mediaRecorder.ondataavailable = (e) => {
     //  make a mediaRecorder form the constructer
@@ -25,17 +27,16 @@ const startRecording = () => {
 
   mediaRecorder.start();
 
-    changeButtons([
-      "green",
-      "green",
-      "blue",
-      "blue",
-      "green",
-      "blue",
-      "grey",
-      "blue",
-    ]);
-
+  changeButtons([
+    "green",
+    "green",
+    "blue",
+    "blue",
+    "green",
+    "blue",
+    "grey",
+    "blue",
+  ]);
 };
 
 const stopRecording = () => {
